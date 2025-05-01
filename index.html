@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axo - Developer Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(1, 1, 33);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00ff95;
+        }
+
+        .right {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #00ff95;
+            color: rgb(1, 1, 33);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 2rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 6rem 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #00ff95;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: #00ff95;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #00ff95;
+            padding-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background-color: rgba(0, 255, 149, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: rgba(0, 255, 149, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #00ff95;
+            color: rgb(1, 1, 33);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 255, 149, 0.3);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 50%;
+            border: 3px solid #00ff95;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+            /* subtle shadow for focus */
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: rgba(0, 255, 149, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Axo's Portfolio</div>
+            <div class="right">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="home" class="hero-section">
+            <h1 class="hero-title">Welcome to My Portfolio</h1>
+            <p class="hero-subtitle">Full Stack Developer & Blockchain Enthusiast</p>
+            <a href="#About" class="cta-button">Get In Touch</a>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <img src="profile.jpg" alt="Akash Kumar Verma" class="profile-img">
+                <div>
+                    <p>Hello! I'm Akash Kumar Verma, a 16-year-old aspiring developer with a passion for technology and
+                        blockchain development...</p>
+                    <!-- ...rest of bio... -->
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Python</h3>
+                    <p>Programming & Automation</p>
+                </div>
+                <div class="skill-card">
+                    <h3>HTML</h3>
+                    <p>Web Structure & Semantics</p>
+                </div>
+                <div class="skill-card">
+                    <h3>CSS</h3>
+                    <p>Web Styling & Design</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Java</h3>
+                    <p>Object-Oriented Programming</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Java.script</h3>
+                    <p>Object-Oriented Programming</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Personal Portfolio</h3>
+                    <p>A responsive portfolio website built with HTML and CSS to showcase my skills and projects.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Amazon Clone</h3>
+                    <p>A front-end clone of Amazon's website, demonstrating HTML and CSS skills.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Axo's website</h3>
+                    <p>A front-end clone of Axo's website, demonstrating HTML,CSS and java skills.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Axo-All web </h3>
+                    <p>A responsive portfolio website built with HTML and CSS to showcase my skills and projects </p>
+                </div>
+                <div class="project-card">
+                    <h3>Total media</h3>
+                    <p>A responsive Total media website built with HTML,CSS,java and java.script to showcase my skills and projects </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <a href="
+                <div class=" contact-item>
+                        <a href="https://mail.google.com/mail/u/0/#search/akashkumarverma583%40gmail.com?compose=new" class="contact-link">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" width="24">
+                            Email Me
+                        </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://wa.me/919235398125" target="_blank" class="contact-link">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                            width="24">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
